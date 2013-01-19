@@ -5,3 +5,11 @@ require 'minitest/unit'
 require 'minitest/mock'
 
 require 'annal'
+
+def json_text
+  IO.read("#{Annal.project_root}/test/test.json")
+end
+
+def yaml_text
+  IO.read("#{Annal.project_root}/test/test.yml")
+end

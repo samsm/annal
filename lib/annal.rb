@@ -1,6 +1,14 @@
 require "annal/version"
 require 'annal/parse'
+require 'annal/fetch'
+require 'annal/document'
 
 module Annal
-  # Your code goes here...
+  def self.root
+    File.dirname(__FILE__)
+  end
+
+  def self.project_root
+    File.expand_path(File.join(root, '..'))
+  end
 end

@@ -1,4 +1,4 @@
-require 'json'
+require 'yaml'
 
 module Annal
   class Parse
@@ -8,11 +8,7 @@ module Annal
     end
 
     def data
-      parse_json || parse_yaml
-    end
-
-    def parse_json
-      JSON.parse(raw_data)
+      parse_yaml
     end
 
     def parse_yaml

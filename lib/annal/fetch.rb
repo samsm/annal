@@ -14,7 +14,7 @@ module Annal
     end
 
     def read
-      file.read
+      @read ||= file.read
     end
   end
 end

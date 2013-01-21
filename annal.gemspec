@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Sam Schenkman-Moore"]
   gem.email         = ["samsm@samsm.com"]
   gem.description   = %q{Loads up files. Parses YAML/JSON and other stuff maybe.}
-  gem.summary       = %q{An ActiveRecordish wrapper for text files.}
+  gem.summary       = %q{A wrapper for text files.}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)

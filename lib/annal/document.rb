@@ -3,7 +3,8 @@ require 'active_support/concern'
 module Annal
   class Document
     def self.find(path)
-      @fetch = Fetch.new(path)
+      fetch = Fetch.new(path)
+      new(fetch)
     end
 
     attr_accessor :raw_string, :fetch

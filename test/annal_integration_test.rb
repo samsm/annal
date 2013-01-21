@@ -12,4 +12,10 @@ class TestAnnalIntegration < MiniTest::Unit::TestCase
     assert_kind_of Hash, doc.data
   end
 
+  def test_find
+    doc = Annal::Document.find("#{Annal.project_root}/test/test.json")
+    assert_kind_of Hash, doc.data
+    assert_kind_of Hash, doc.data
+  end
+
 end

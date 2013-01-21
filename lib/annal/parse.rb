@@ -11,6 +11,7 @@ module Annal
       parse_yaml
     end
 
+    # Also parses JSON
     def parse_yaml
       YAML.load(raw_data)
     end

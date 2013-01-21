@@ -1,8 +1,6 @@
 require_relative 'minitest_helper'
 
 class TestAnnalIntegration < MiniTest::Unit::TestCase
-  def setup
-  end
 
   def test_loading_json
     doc = Annal::Document.new(json_text)

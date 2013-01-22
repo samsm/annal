@@ -13,7 +13,11 @@ module Annal
 
     # Also parses JSON
     def parse_yaml
-      YAML.load(raw_data)
+      begin
+        YAML.load(raw_data)
+      rescue Psych::SyntaxError
+        raw_data
+      end
     end
   end
 end

@@ -2,6 +2,7 @@ require "annal/version"
 require 'annal/parse'
 require 'annal/fetch'
 require 'annal/document'
+require 'annal/collection'
 
 module Annal
   def self.root

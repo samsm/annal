@@ -8,7 +8,11 @@ module Annal
     end
 
     def data
-      parse_yaml
+      @data ||= parse_yaml
+    end
+
+    def parseable?
+      not data.kind_of?(String)
     end
 
     # Also parses JSON

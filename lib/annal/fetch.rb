@@ -1,20 +1,17 @@
+require 'annal/fetch/local_file'
+require 'annal/fetch/net_file'
+
 module Annal
-  class Fetch
-    attr_accessor :path, :file
-    def initialize(file_identifier)
-      self.file = if file_identifier.respond_to?(:read)
-        file_identifier
+  module Fetch
+    def self.new(file_identifier)
+      case file_identifier
+      when File
+        LocalFile.new(file_identifier)
+      when %r(https?://)
+        NetFile.new(file_identifier)
       else
-        File.open(file_identifier)
+        LocalFile.new(file_identifier)
       end
-    end
-
-    def local?
-      true
-    end
-
-    def read
-      @read ||= file.read
     end
   end
 end

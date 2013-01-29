@@ -1,16 +1,23 @@
 require_relative 'minitest_helper'
 
-class TestFetchIntegration < MiniTest::Unit::TestCase
+class TestFetchNetFileIntegration < MiniTest::Unit::TestCase
+  def subject
+    Annal::Fetch::NetFile
+  end
 
   def test_fetch
-    read = Annal::Fetch.new("#{Annal.project_root}/test/test.json").read
+    read = subject.new(json_url).read
     assert_match 'development_environment', read
   end
 
   def test_double_read
-    fetch = Annal::Fetch.new("#{Annal.project_root}/test/test.json")
+    fetch = subject.new(json_url)
     assert_match 'development_environment', fetch.read
     assert_match 'development_environment', fetch.read
   end
+
+  # def test_crazy_pants
+  #   stub_rest_client!
+  # end
 
 end

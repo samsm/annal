@@ -8,5 +8,4 @@ class TestAnnal < MiniTest::Unit::TestCase
   def test_that_kitty_can_eat
     assert_kind_of Module, Annal
   end
-
 end

@@ -1,6 +1,21 @@
 # Annal
 
-TODO: Write a gem description
+Annal aims to solve a small problem I run into a bit ... reading and parsing groups of YAML or JSON files.
+
+Instead of:
+```ruby
+Dir.glob('/path/*').each do |file|
+  if file =~ %r(\.ya?ml\Z)
+    YAML.parse(file)
+  end
+end
+```
+
+It would be:
+```ruby
+Annal::Collection.new('/path/*').documents
+```
+In the future, perhaps this will also get files from S3 or such. Crazier things have happened!
 
 ## Installation
 

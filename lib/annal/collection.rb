@@ -1,12 +1,13 @@
 module Annal
   class Collection
-    attr_accessor :dir
+    attr_accessor :dir, :dir_source
     def initialize(dir)
       self.dir = dir
+      self.dir_source = Dir.glob(dir)
     end
 
-    def file_paths(glob_match = '*')
-      Dir.glob("#{dir}/#{glob_match}").select {|path| File.file?(path) }
+    def file_paths
+      dir_source.select {|path| File.file?(path) }
     end
 
     def documents
